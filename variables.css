@@ -11,6 +11,26 @@
   We will leave the imports as an exercise for you
   (You've seen how to do this in Assignment 3 and 4)
 **/
+@font-face {
+  font-family: "Space-Mono";
+  font-display: swap;
+  src: url("./assets/fonts/Space_Mono/SpaceMono-Regular.ttf");
+}
+@font-face {
+  font-family: "Space-Mono-Italic";
+  font-display: swap;
+  src: url("./assets/fonts/Space_Mono/SpaceMono-Italic.ttf");
+}
+@font-face {
+  font-family: "Space-Mono-BoldItalic";
+  font-display: swap;
+  src: url("./assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "Space-Mono-Bold";
+  font-display: swap;
+  src: url("./assets/fonts/Space_Mono/SpaceMono-Bold.ttf");
+}
 
 /*
   CSS Variables
@@ -34,5 +54,8 @@
   --fw-regular: 700; /* Bold Style */
 
   /* Fonts */
-  --fs-base: '';
+  --fs-base: "Space-Mono";
+  --fs-base-I: "Space-Mono-Italic";
+  --fs-base-BI: "Space-Mono-BoldItalic";
+  --fs-base-B: "Space-Mono-Bold";
 }

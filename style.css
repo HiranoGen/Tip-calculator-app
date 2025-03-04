@@ -1,12 +1,14 @@
 /** Variable Imports **/
-@import './variables.css';
+@import "./variables.css";
 
 /**
   CSS Reset
   Source: https://www.joshwcomeau.com/css/custom-css-reset/
 **/
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /* 2. Remove default margin */
@@ -20,34 +22,290 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 /* 5. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /* 6. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 /* 8. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 /** Your CSS Below **/
+body {
+  background-color: var(--clr-lightGrayishCyan);
+  /* margin-inline: auto; */
+  /* min-height: 100vh; */
+  font-family: var(--fs-base);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  align-items: center;
+  padding-top: 3rem;
+  gap: 3rem;
+}
+.container {
+  background-color: var(--clr-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  max-width: 57.5rem;
+  gap: 3rem;
+  box-shadow: 0 2rem 2.687rem rgba(38, 192, 171, 0.205);
+}
+.left {
+  padding: 1rem;
+  padding-right: 0;
+}
+.left,
+.right {
+  width: 50%;
+}
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 0.875rem;
+}
+.right {
+  padding: 2.5rem;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.icon {
+  position: absolute;
+  left: 1.25rem;
+}
+input {
+  background-color: var(--clr-veryLightGrayishCyan);
+  color: var(--clr-veryDarkCyan);
+  font-size: 1.5rem;
+  font-weight: var(--fw-regular);
+  border: none;
+  border-radius: 0.32rem;
+  width: 100%;
+}
+input:is(:focus) {
+  outline: 2px solid var(--clr-strongCyan);
+}
+input:not(#customTip) {
+  /* display: inline-block; */
+  text-align: right;
+  /* direction: ltr; */
+  padding-left: 1.25rem;
+  padding-right:1.125rem;
+  padding-block: 0.4rem;
+  transition: outline 0.3s ease;
+}
+input:not(#customTip)::placeholder {
+  color: var(--clr-grayishCyan);
+}
+label {
+  display: block;
+  line-height: 1.2rem;
+  font-size: 1rem;
+  color: var(--clr-darkGrayishCyan);
+  margin-bottom: 6px;
+}
+/* .people {
+  position: relative;
+} */
+
+/* button */
+.tip-buttons button {
+  /* display: inline-block; */
+  background-color: var(--clr-veryDarkCyan);
+  color: var(--clr-white);
+  font-size: 1.5rem;
+  font-weight: var(--fw-regular);
+  border: none;
+  border-radius: 0.3125rem;
+  padding-block: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: var(--clr-lightGrayishCyan);
+  color: var(--clr-veryDarkCyan);
+}
+/* button.selected {
+  background-color: var(--clr-strongCyan);
+  color: var(--clr-veryDarkCyan);
+} */
+#customTip {
+  text-align: center;
+}
+/* --------right-------- */
+.right {
+  background-color: var(--clr-veryDarkCyan);
+  padding: 2.3125rem 1.375rem;
+  border-radius: 0.9375rem;
+
+  display: flex;
+  flex-direction: column;
+}
+.result + .result {
+  padding-top: 1.25rem;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.amount {
+  font-size: 1rem;
+  color: var(--clr-white);
+  font-family: var(--fs-base-B);
+}
+.person {
+  font-size: 0.8125rem;
+  color: var(--clr-grayishCyan);
+  font-family: var(--fs-base-B);
+}
+#tipAmount,
+#totalPerPerson {
+  font-size: 2rem;
+  color: var(--clr-strongCyan);
+  font-family: var(--fs-base-B);
+}
+span {
+  display: block;
+}
+.reset-button {
+  background-color: var(--clr-strongCyan);
+  color: var(--clr-veryDarkCyan);
+  font-size: 1.25rem;
+  font-family: var(--fs-base-B);
+  border: none;
+  border-radius: 0.3125rem;
+  padding-block: 0.5rem;
+  margin-top: auto;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.reset-button:hover {
+  background-color: var(--clr-lightGrayishCyan);
+}
+
+/* ----------Events---------- */
+
+.error-input {
+  outline: 2px solid #e17052;
+}
+.errorMsg {
+  position: aboslute;
+  top: 0;
+  right: 0;
+  color: #e17457;
+  font-size: 1rem;
+}
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+  cursor: not-allowed
+}
+
+/* ----------- Media queries ------------ */
+
+@media (max-width: 600px) {
+  main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  }
+
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: var(--clr-white);
+    border-radius: 1.565rem 1.565rem 0 0;
+    min-height: 100vh;
+  
+  }
+  .left {
+    padding:1rem;
+  }
+  
+  .left,
+  .right {
+    width: 100%;
+  }
+  .tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .reset-button {
+    margin-top: 3rem;
+  }
+
+}
+
 
 /** Attribution CSS **/
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
