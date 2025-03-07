@@ -159,9 +159,9 @@ label {
   color: var(--clr-darkGrayishCyan);
   margin-bottom: 6px;
 }
-/* .people {
+.people {
   position: relative;
-} */
+}
 
 /* button */
 .tip-buttons button {
@@ -180,10 +180,10 @@ button:hover {
   background-color: var(--clr-lightGrayishCyan);
   color: var(--clr-veryDarkCyan);
 }
-/* button.selected {
+button.selected {
   background-color: var(--clr-strongCyan);
   color: var(--clr-veryDarkCyan);
-} */
+}
 #customTip {
   text-align: center;
 }
@@ -246,7 +246,7 @@ span {
   outline: 2px solid #e17052;
 }
 .errorMsg {
-  position: aboslute;
+  position: absolute;
   top: 0;
   right: 0;
   color: #e17457;
@@ -258,7 +258,7 @@ span {
   cursor: not-allowed
 }
 
-/* ----------- Media queries ------------ */
+/* ----------- Media queries mobil------------ */
 
 @media (max-width: 600px) {
   main {
@@ -287,6 +287,9 @@ span {
   .left,
   .right {
     width: 100%;
+  }
+  .right {
+    padding: 2.3125rem;
   }
   .tip-buttons {
     display: grid;
